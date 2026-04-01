@@ -19,6 +19,10 @@ int main() {
     return false;
   }
 
+  if(command == "echo"){
+    cout << command << endl;
+  }
+
   cout << command << ": command not found" << endl;
   }
 }

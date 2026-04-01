@@ -17,13 +17,13 @@ int main()
     string command;
     getline(cin, command);
 
-    if (command.substr(0, 5) == "type " && (command.substr(5, 10) == " echo"|| command.substr(5, 10) == " type" || command.substr(5, 10) == " exit"))
+    if (command.substr(0, 5) == "type " && (command.substr(5) == "echo"|| command.substr(5) == "type" || command.substr(5) == "exit"))
     {
       cout << command.substr(5) << " is a shell builtin"<< endl;
     }
     else
     {
-      cout << command << ": command not found" << endl;
+      cout << command << ": not found" << endl;
     }
   }
 }

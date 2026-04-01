@@ -15,6 +15,10 @@ int main() {
   string command;
   getline(cin,command);
 
+  if (command == "exit"){
+    return;
+  }
+
   cout << command << ": command not found" << endl;
   }
 }

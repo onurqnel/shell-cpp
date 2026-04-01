@@ -8,6 +8,9 @@ int main() {
   cout << unitbuf;
   cerr << unitbuf;
 
+  string command;
+  getline(cin,command);
+
   // TODO: Uncomment the code below to pass the first stage
- cout << "$ ";
+ cout << command << ": command not found" << endl;
 }

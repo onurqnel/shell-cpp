@@ -3,26 +3,32 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
   // Flush after every std::cout / std:cerr
   cout << unitbuf;
   cerr << unitbuf;
-  
-  while (true){
 
-  cout << "$ ";
+  while (true)
+  {
 
-  string command;
-  getline(cin,command);
+    cout << "$ ";
 
-  if (command == "exit"){
-    return false;
-  }
+    string command;
+    getline(cin, command);
 
-  if(command == "echo"){
-    cout << command << endl;
-  } else {
-  cout << command << ": command not found" << endl;
-  }
+    if (command == "exit")
+    {
+      return false;
+    }
+
+    if (command.substr(0, 5) == "echo ")
+    {
+      cout << command.substr(5) << endl;
+    }
+    else
+    {
+      cout << command << ": command not found" << endl;
+    }
   }
 }

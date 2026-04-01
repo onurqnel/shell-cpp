@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <set>
 
 using namespace std;
 
@@ -9,21 +10,24 @@ int main()
   cout << unitbuf;
   cerr << unitbuf;
 
+  set<string> builtins = {"echo", "exit", "type"};
+
   while (true)
   {
-
     cout << "$ ";
-
     string command;
     getline(cin, command);
 
-    if (command.substr(0, 5) == "type " && (command.substr(5) == "echo"|| command.substr(5) == "type" || command.substr(5) == "exit"))
+    if (command == "exit")
+      break;
+
+    if (command.substr(0, 5) == "type ")
     {
-      cout << command.substr(5) << " is a shell builtin"<< endl;
-    }
-    else
-    {
-      cout << command.substr(5)  << ": not found" << endl;
+      string arg = command.substr(5);
+      if (builtins.count(arg))
+        cout << arg << " is a shell builtin" << endl;
+      else
+        cout << arg << ": not found" << endl;
     }
   }
 }

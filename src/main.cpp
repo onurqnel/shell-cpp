@@ -23,7 +23,7 @@ int main()
     }
     else
     {
-      cout << command << ": not found" << endl;
+      cout << command.substr(5)  << ": not found" << endl;
     }
   }
 }

@@ -26,5 +26,9 @@ int main()
     {
       cout << command.substr(5) << endl;
     }
+    else
+    {
+      cout << command << ": command not found" << endl;
+    }
   }
 }

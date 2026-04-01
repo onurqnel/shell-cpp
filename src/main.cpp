@@ -17,14 +17,9 @@ int main()
     string command;
     getline(cin, command);
 
-    if (command == "exit")
+    if (command.substr(0, 5) == "echo "|| command.substr(0, 5) == "type " || command.substr(0, 5) == "exit ")
     {
-      return false;
-    }
-
-    if (command.substr(0, 5) == "echo ")
-    {
-      cout << command.substr(5) << endl;
+      cout << command.substr(5) << " is a shell builtin"<< endl;
     }
     else
     {

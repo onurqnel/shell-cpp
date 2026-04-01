@@ -21,6 +21,8 @@ int main() {
 
   if(command == "echo"){
     cout << command << endl;
+    return false;
+
   }
 
   cout << command << ": command not found" << endl;
